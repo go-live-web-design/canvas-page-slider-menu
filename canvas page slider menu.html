@@ -1,0 +1,65 @@
+<div class="container">
+  
+	<div class="menu_container">
+		<a id="menu-toggle" class="anchor-link" href="#mobile-nav">MENU</a>
+	</div>
+	
+	<nav id="#mobile-nav" class="nav clearfix" role="navigation">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Collection</a></li>
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Directions</a></li>
+		</ul>
+	</nav>
+	
+
+	<section class="main_content" role="main">
+	
+		<h1>The Off Canvas Page Slide</h1>
+				
+		<p>First of all, let me say that I love this method. This example is a super simple demonstration of a menu pattern is somewhat derived from how Facebook has popularized the "off-canvas" look on their mobile website and app. Basically, when the browser gets down below a certain breakpoint, the menu disappears and we are presented with a single "menu" button. When this button is clicked, the menu slides out from the left and the main body content moves to the right. This gives the appearance of a menu that is sitting "off canvas" or out of the picture, then it slides in to reveal itself. This is quite a sexy trick.</p>
+		
+		<p>The main downside to this is that it can't always accommodate a large menu with lots of sub-navigation. But if you have a menu with not too many links, this is definitely a viable option.</p>
+		
+		<h3>Javascript</h3>
+		
+		<p>Check out the JS that gives the body a class of "active" when the menu button is clicked:</p>
+		
+<pre>
+$('.js #menu-toggle').click(function (e) {
+  $('body').toggleClass('active');
+  e.preventDefault();
+});
+</pre>
+
+		<p>It's pretty straight forward - once the menu button is clicked, we toggle a class of "active" on the body tag. We also prevent the default action of the link going anywhere by adding <code>e.preventDefault();</code>.</p>
+		
+		<h3>Important things to note</h3>
+		
+		<ul>
+			<li>Use must use <code>overflow:hidden;</code> on your container.</li>
+			<li>Use <code>clear:both;</code> on the container that holds the "menu" link and the footer.</li>
+		</ul>
+		
+		<h3>Styling The Menu</h3>
+		
+		<p>A fancy way to give the menu a background that extends the full width of the page (down to your footer) is to use the pseudo property <code>:before</code> on your main content container. Make sure to set the main content container to <code>position:relative</code>, then you can use the <code>:before</code> property to get fancy. Check out the source code of this page for an example.</p>
+		
+		<h3>Credit</h3>
+			
+		<p>Props to Jason Weaver for the code example that <a href="http://jasonweaver.name/lab/offcanvas/" rel="external" target="_blank">he has here.</a> He explains the use of the off canvas navigation as well as an off canvas sidebar.</p>	
+		
+	</section>
+			
+			
+	<footer class="clearfix footer">
+			
+		<p class="copyright"><a href="http://erickar.be">erick arbe</a></p>
+				
+	</footer>
+
+
+</div>
